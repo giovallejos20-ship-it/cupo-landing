@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cupo · Carga compartida para mypes</title>
+<meta name="description" content="Comparte un camión homologado con otras mypes que van a tu misma ruta. Salidas fijas desde Lima, precio claro por tonelada y papeles en regla.">
+<meta property="og:title" content="Cupo · Paga solo por tu carga, no por el camión entero">
+<meta property="og:description" content="Carga compartida para mypes. Salidas fijas desde Lima, precio por tonelada y seguimiento en tiempo real.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#17191C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2317191C'/%3E%3Crect x='14' y='22' width='36' height='20' rx='3' fill='%23F2B705'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#17191C}a:hover{color:#000000}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.board-row{display:grid;grid-template-columns:2.2fr 1.4fr 1fr 1.2fr;gap:12px;align-items:center}
+.scroll{overflow-x:auto}
+@media (max-width:900px){
+.g2,.g3{grid-template-columns:1fr;gap:40px}
+.g4{grid-template-columns:1fr 1fr;gap:28px}
+.wrap{padding:0 22px}
+}
+@media (max-width:560px){
+.g4{grid-template-columns:1fr}
+.board-row{grid-template-columns:1.6fr 1.2fr 1fr 1.1fr;gap:8px}
+}
+</style>
+<style>html{scroll-behavior:smooth}*:focus-visible{outline:3px solid #F2B705;outline-offset:3px}</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', Arial, sans-serif; color: #17191C; background: #F3F0E8; min-height: 100vh">
+
+<header style="background: #17191C; color: #F3F0E8">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 18px; padding-bottom: 18px">
+<a href="#inicio" style="display: flex; align-items: baseline; gap: 10px; color: #F3F0E8; text-decoration: none">
+<span style="font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 75%; font-size: 30px; letter-spacing: 1px">CUPO</span>
+<span style="font-size: 14px; color: #C9CCD1">carga compartida</span>
+</a>
+<nav aria-label="Principal" style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 15px">
+<a href="#como-funciona" style="color: #F3F0E8; text-decoration: none">Cómo funciona</a>
+<a href="#tarifas" style="color: #F3F0E8; text-decoration: none">Tarifas</a>
+<a href="#transportistas" style="color: #F3F0E8; text-decoration: none">Tengo camión</a>
+</nav>
+<a href="https://wa.me/51000000000" style="background: #F2B705; color: #17191C; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 6px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Reservar por WhatsApp</a>
+</div>
+</header>
+
+<section id="inicio" style="background: #17191C; color: #F3F0E8; padding: 72px 0 96px">
+<div class="wrap g2" style="align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<h1 style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: clamp(56px, 7.4vw, 104px); line-height: 0.92; letter-spacing: -0.5px">Paga solo por tu carga, no por el camión entero.</h1>
+<p style="margin: 0; font-size: 21px; line-height: 1.5; color: #D5D8DC; max-width: 520px">Si tu empresa manda 5 o 10 toneladas, comparte un camión homologado con otras mypes que van a la misma ruta. Salidas fijas desde Lima, precio claro por tonelada y tus papeles en regla.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap">
+<a href="https://wa.me/51000000000" style="background: #F2B705; color: #17191C; text-decoration: none; font-weight: 600; font-size: 18px; padding: 16px 26px; border-radius: 6px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center">Reservar mi cupo</a>
+<a href="#tarifas" style="color: #F3F0E8; text-decoration: none; font-weight: 600; font-size: 18px; padding: 16px 26px; border-radius: 6px; border: 2px solid #5A5F67; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center">Ver tarifas</a>
+</div>
+</div>
+<div style="background: #0E0F11; border: 2px solid #33373D; border-radius: 10px; padding: 26px; font-family: 'IBM Plex Mono', monospace">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 16px; border-bottom: 2px solid #33373D">
+<span style="font-size: 15px; font-weight: 600; letter-spacing: 2px; color: #F2B705">PRÓXIMAS SALIDAS</span>
+<span style="font-size: 13px; color: #A9AEB5">Desde Lima</span>
+</div>
+<div class="board-row" style="font-size: 12px; letter-spacing: 1px; color: #A9AEB5; padding: 14px 0 6px">
+<span>DESTINO</span><span>DÍAS</span><span>CUPO</span><span>S/ POR TN</span>
+</div>
+<div class="board-row" style="font-size: 17px; padding: 14px 0; border-top: 1px solid #26292E">
+<span style="color: #F3F0E8; font-weight: 600">TRUJILLO</span><span style="color: #D5D8DC">MAR · VIE</span><span style="color: #F2B705">[— TN]</span><span style="color: #F3F0E8">[PRECIO]</span>
+</div>
+<div class="board-row" style="font-size: 17px; padding: 14px 0; border-top: 1px solid #26292E">
+<span style="color: #F3F0E8; font-weight: 600">CHICLAYO</span><span style="color: #D5D8DC">MAR · VIE</span><span style="color: #F2B705">[— TN]</span><span style="color: #F3F0E8">[PRECIO]</span>
+</div>
+<div class="board-row" style="font-size: 17px; padding: 14px 0; border-top: 1px solid #26292E">
+<span style="color: #F3F0E8; font-weight: 600">AREQUIPA</span><span style="color: #D5D8DC">LUN · JUE</span><span style="color: #F2B705">[— TN]</span><span style="color: #F3F0E8">[PRECIO]</span>
+</div>
+<div class="board-row" style="font-size: 17px; padding: 14px 0; border-top: 1px solid #26292E">
+<span style="color: #F3F0E8; font-weight: 600">PIURA</span><span style="color: #D5D8DC">MIÉ</span><span style="color: #F2B705">[— TN]</span><span style="color: #F3F0E8">[PRECIO]</span>
+</div>
+<p style="margin: 14px 0 0; font-size: 13px; line-height: 1.5; color: #A9AEB5">Plataforma de 30 Tn y furgón. ¿Otra ruta o necesitas el camión completo? Escríbenos.</p>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="problema" style="padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 18px">
+<h2 id="problema" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 800; font-stretch: 78%; font-size: clamp(40px, 4.6vw, 64px); line-height: 1">Mandas 6 toneladas. Te cobran 30.</h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #4A4F57">A una mype casi nunca le alcanza la carga para llenar un camión, pero el flete se cobra completo. El espacio vacío lo pagas tú.</p>
+</div>
+<div class="g2">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<svg viewBox="0 0 520 170" role="img" aria-label="Camión de 30 toneladas con solo 6 toneladas de carga; el resto va vacío" style="width: 100%; height: auto">
+<rect x="0" y="60" width="96" height="78" rx="8" fill="#23262B"></rect>
+<rect x="14" y="74" width="46" height="30" rx="3" fill="#F3F0E8"></rect>
+<rect x="104" y="40" width="410" height="98" rx="4" fill="none" stroke="#23262B" stroke-width="3" stroke-dasharray="8 7"></rect>
+<rect x="110" y="46" width="82" height="86" rx="3" fill="#23262B"></rect>
+<text x="151" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" fill="#F3F0E8">6 Tn</text>
+<text x="355" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="16" fill="#4A4F57">24 Tn vacías</text>
+<rect x="96" y="138" width="418" height="8" fill="#23262B"></rect>
+<circle cx="48" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="300" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="440" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="476" cy="152" r="16" fill="#17191C"></circle>
+</svg>
+<figcaption style="font-size: 17px; line-height: 1.5"><strong>Hoy:</strong> pagas el camión completo aunque uses una quinta parte.</figcaption>
+</figure>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<svg viewBox="0 0 520 170" role="img" aria-label="El mismo camión lleno con la carga de cuatro empresas distintas; tu parte son 6 toneladas" style="width: 100%; height: auto">
+<rect x="0" y="60" width="96" height="78" rx="8" fill="#23262B"></rect>
+<rect x="14" y="74" width="46" height="30" rx="3" fill="#F3F0E8"></rect>
+<rect x="104" y="40" width="410" height="98" rx="4" fill="none" stroke="#23262B" stroke-width="3"></rect>
+<rect x="110" y="46" width="82" height="86" rx="3" fill="#F2B705"></rect>
+<text x="151" y="96" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="18" font-weight="600" fill="#17191C">Tú</text>
+<rect x="196" y="46" width="110" height="86" rx="3" fill="#23262B"></rect>
+<rect x="310" y="46" width="96" height="86" rx="3" fill="#4A4F57"></rect>
+<rect x="410" y="46" width="98" height="86" rx="3" fill="#23262B"></rect>
+<rect x="96" y="138" width="418" height="8" fill="#23262B"></rect>
+<circle cx="48" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="300" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="440" cy="152" r="16" fill="#17191C"></circle>
+<circle cx="476" cy="152" r="16" fill="#17191C"></circle>
+</svg>
+<figcaption style="font-size: 17px; line-height: 1.5"><strong>Con Cupo:</strong> el camión sale lleno con la carga de varias empresas y tú pagas solo tus toneladas.</figcaption>
+</figure>
+</div>
+</div>
+</section>
+
+<section id="como-funciona" aria-labelledby="como" style="background: #E7E2D6; padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 56px">
+<h2 id="como" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 800; font-stretch: 78%; font-size: clamp(40px, 4.6vw, 64px); line-height: 1; max-width: 760px">Como sacar un pasaje, pero para tu carga.</h2>
+<ol class="g4" style="list-style: none; margin: 0; padding: 0">
+<li style="display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #17191C; padding-top: 18px">
+<span style="font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: 64px; line-height: 1">1</span>
+<h3 style="margin: 0; font-size: 22px">Reserva tu cupo</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E434A">Escríbenos por WhatsApp con la ruta, las toneladas y la fecha. Te confirmamos el precio y la salida.</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #17191C; padding-top: 18px">
+<span style="font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: 64px; line-height: 1">2</span>
+<h3 style="margin: 0; font-size: 22px">Cargamos en la salida fija</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E434A">Coordinamos el recojo o la entrega en el punto de carga, con camión y chofer verificados.</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #17191C; padding-top: 18px">
+<span style="font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: 64px; line-height: 1">3</span>
+<h3 style="margin: 0; font-size: 22px">Sigues el viaje</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E434A">Te avisamos al salir, en ruta y al llegar, con ubicación en tiempo real. Sin tener que preguntar.</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 12px; border-top: 4px solid #17191C; padding-top: 18px">
+<span style="font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: 64px; line-height: 1">4</span>
+<h3 style="margin: 0; font-size: 22px">Entrega con constancia</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #3E434A">Recibes la foto de la guía firmada y de tu carga entregada, el mismo día.</p>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="tarifas" aria-labelledby="tarifas-t" style="padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="max-width: 760px; display: flex; flex-direction: column; gap: 18px">
+<h2 id="tarifas-t" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 800; font-stretch: 78%; font-size: clamp(40px, 4.6vw, 64px); line-height: 1">Precios publicados. Sin regateo.</h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #4A4F57">Sabes cuánto pagarás antes de escribirnos. El precio incluye la coordinación, el seguimiento y la constancia de entrega.</p>
+</div>
+<div class="scroll" style="border: 2px solid #17191C; border-radius: 8px; background: #FFFFFF">
+<table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 17px">
+<caption style="text-align: left; padding: 16px 20px; font-size: 15px; color: #4A4F57">Tarifas desde Lima, IGV incluido</caption>
+<thead>
+<tr style="background: #17191C; color: #F3F0E8; text-align: left">
+<th scope="col" style="padding: 14px 20px; font-weight: 600">Ruta</th>
+<th scope="col" style="padding: 14px 20px; font-weight: 600">Salidas</th>
+<th scope="col" style="padding: 14px 20px; font-weight: 600">Carga compartida, por Tn</th>
+<th scope="col" style="padding: 14px 20px; font-weight: 600">Camión completo, 30 Tn</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #D9D4C7">
+<th scope="row" style="padding: 16px 20px; text-align: left">Lima → Trujillo</th>
+<td style="padding: 16px 20px">Martes y viernes</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+</tr>
+<tr style="border-top: 1px solid #D9D4C7">
+<th scope="row" style="padding: 16px 20px; text-align: left">Lima → Chiclayo</th>
+<td style="padding: 16px 20px">Martes y viernes</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+</tr>
+<tr style="border-top: 1px solid #D9D4C7">
+<th scope="row" style="padding: 16px 20px; text-align: left">Lima → Arequipa</th>
+<td style="padding: 16px 20px">Lunes y jueves</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+</tr>
+<tr style="border-top: 1px solid #D9D4C7">
+<th scope="row" style="padding: 16px 20px; text-align: left">Lima → Piura</th>
+<td style="padding: 16px 20px">Miércoles</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+<td style="padding: 16px 20px; font-family: 'IBM Plex Mono', monospace">S/ [PRECIO]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #4A4F57">Carga mínima: [MÍNIMO] Tn. Recojo en Lima Metropolitana y Callao: [PRECIO O INCLUIDO].</p>
+</div>
+</section>
+
+<section aria-labelledby="seguridad" style="background: #17191C; color: #F3F0E8; padding: 104px 0">
+<div class="wrap g2">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<h2 id="seguridad" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 800; font-stretch: 78%; font-size: clamp(40px, 4.6vw, 64px); line-height: 1">Estándar de gran operador. Trato de mype.</h2>
+<p style="margin: 0; font-size: 20px; line-height: 1.55; color: #D5D8DC">Nuestra operación la dirige alguien que trabajó años dentro de un gran operador logístico. Aplicamos los mismos filtros, sin su burocracia ni sus mínimos de volumen.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #C9CCD1">No somos dueños de los camiones: elegimos y vigilamos a quienes los manejan, y respondemos por la coordinación de principio a fin.</p>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0">
+<li style="padding: 22px 0; border-top: 2px solid #33373D; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; color: #F2B705">Camiones y choferes homologados</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #D5D8DC">Revisamos documentos, estado de la unidad, seguro y antecedentes antes del primer viaje.</p>
+</li>
+<li style="padding: 22px 0; border-top: 2px solid #33373D; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; color: #F2B705">Seguimiento de cada salida</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #D5D8DC">Ubicación en tiempo real, rutas y paradas aprobadas, y avisos en cada etapa.</p>
+</li>
+<li style="padding: 22px 0; border-top: 2px solid #33373D; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; color: #F2B705">Una persona que responde</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #D5D8DC">Un solo número, con nombre y apellido. Si algo pasa en ruta, te enteras por nosotros.</p>
+</li>
+<li style="padding: 22px 0; border-top: 2px solid #33373D; border-bottom: 2px solid #33373D; display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-size: 21px; color: #F2B705">Papeles en regla</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #D5D8DC">Factura, guía de remisión y detracción explicadas en simple, para que no tengas sorpresas con SUNAT.</p>
+</li>
+</ul>
+</div>
+</section>
+
+<section id="transportistas" aria-labelledby="camion" style="background: #F2B705; padding: 96px 0">
+<div class="wrap g2" style="align-items: center">
+<h2 id="camion" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: clamp(44px, 5.4vw, 76px); line-height: 0.95">¿Tienes camión? Sal siempre lleno.</h2>
+<div style="display: flex; flex-direction: column; gap: 20px">
+<ul style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 19px; line-height: 1.45">
+<li>Viajes constantes en rutas fijas, también de retorno.</li>
+<li>Pago puntual y sin comisiones abusivas.</li>
+<li>Te ayudamos a cumplir lo que piden las empresas formales.</li>
+</ul>
+<a href="https://wa.me/51000000000" style="align-self: flex-start; background: #17191C; color: #F3F0E8; text-decoration: none; font-weight: 600; font-size: 18px; padding: 16px 26px; border-radius: 6px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center">Quiero ser transportista aliado</a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="preguntas" style="padding: 104px 0">
+<div class="wrap g2">
+<h2 id="preguntas" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 800; font-stretch: 78%; font-size: clamp(40px, 4.6vw, 64px); line-height: 1">Preguntas frecuentes</h2>
+<div style="display: flex; flex-direction: column">
+<details style="border-top: 2px solid #17191C; padding: 20px 0">
+<summary style="font-size: 20px; font-weight: 600; cursor: pointer; min-height: 44px">¿Mi carga viaja mezclada con la de otros?</summary>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: #3E434A">Comparte el camión, pero cada carga va identificada, separada y con su propia guía de remisión. Al llegar, cada empresa recibe solo lo suyo.</p>
+</details>
+<details style="border-top: 2px solid #17191C; padding: 20px 0">
+<summary style="font-size: 20px; font-weight: 600; cursor: pointer; min-height: 44px">¿Qué pasa si mi carga se daña o se pierde?</summary>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: #3E434A">[EXPLICAR LA COBERTURA DE SEGURO Y EL PROCEDIMIENTO ANTE SINIESTROS, SEGÚN LOS CONTRATOS.]</p>
+</details>
+<details style="border-top: 2px solid #17191C; padding: 20px 0">
+<summary style="font-size: 20px; font-weight: 600; cursor: pointer; min-height: 44px">¿Qué tipo de carga aceptan?</summary>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: #3E434A">Carga seca industrial y mercadería embalada o paletizada. [DETALLAR LO QUE NO SE ACEPTA.]</p>
+</details>
+<details style="border-top: 2px solid #17191C; border-bottom: 2px solid #17191C; padding: 20px 0">
+<summary style="font-size: 20px; font-weight: 600; cursor: pointer; min-height: 44px">¿Cómo pago?</summary>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.55; color: #3E434A">[DEFINIR FORMA Y PLAZO DE PAGO.]</p>
+</details>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="final" style="background: #17191C; color: #F3F0E8; padding: 104px 0">
+<div class="wrap" style="display: flex; flex-direction: column; align-items: flex-start; gap: 28px">
+<h2 id="final" style="margin: 0; font-family: Archivo, Arial, sans-serif; font-weight: 900; font-stretch: 72%; font-size: clamp(48px, 6.4vw, 92px); line-height: 0.95; max-width: 900px">La próxima salida tiene espacio para tu carga.</h2>
+<a href="https://wa.me/51000000000" style="background: #F2B705; color: #17191C; text-decoration: none; font-weight: 600; font-size: 20px; padding: 18px 30px; border-radius: 6px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center">Reservar mi cupo por WhatsApp</a>
+</div>
+</section>
+
+<footer style="background: #0E0F11; color: #C9CCD1; padding: 36px 0">
+<div class="wrap" style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 15px">
+<span><strong style="color: #F3F0E8">CUPO</strong> · Carga compartida para mypes · Lima, Perú</span>
+<span>WhatsApp: +51 [NÚMERO] · [CORREO]</span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
